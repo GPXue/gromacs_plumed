@@ -28,7 +28,15 @@ echo ". ${LIBTORCH}/sourceme.sh" >> ~/.bashrc
 Download the development version of PLUMED2
 
 ```
-git clone https://github.com/luigibonati/masterclass-plumed.git
+git clone  https://github.com/plumed/plumed2
+
+cd plumed2
+./configure --enable-libtorch --enable-modules=all
+make -j4
+. sourceme.sh
+cd .. 
+
+echo ". $PWD/sourceme.sh" >> ~/.bashrc
 
 cd plumed2
 ./configure --enable-libtorch --enable-modules=all
